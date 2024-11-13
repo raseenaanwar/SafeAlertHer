@@ -1,0 +1,51 @@
+<!-- templates/core/edit_contact.html -->
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+<style>
+.edit-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.btn-save {
+    padding: 10px 30px;
+    font-weight: 500;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card edit-card">
+                <div class="card-body p-4">
+                    <div class="text-center mb-4">
+                        <div class="display-6 mb-3">✏️</div>
+                        <h4 class="card-title">Edit Contact</h4>
+                        <p class="text-muted">Update contact information for {{ contact.name }}</p>
+                    </div>
+
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary btn-save">Save Changes</button>
+                            <a href="{% url 'contacts' %}" class="btn btn-light">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

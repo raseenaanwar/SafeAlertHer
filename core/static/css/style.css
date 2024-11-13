@@ -1,0 +1,92 @@
+body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    margin-bottom: 1.5rem;
+}
+
+.card-title {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.form-control {
+    border-radius: 7px;
+    padding: 12px;
+}
+
+.btn {
+    border-radius: 7px;
+    padding: 8px 16px;
+}
+
+.btn-lg {
+    padding: 12px 24px;
+}
+
+.alert {
+    border-radius: 7px;
+}
+
+.list-group-item {
+    border-radius: 7px !important;
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(0,0,0,.125) !important;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    margin-top: auto;
+}
+
+/* Custom styles for forms */
+.asteriskField {
+    display: none;  /* Hide asterisk from crispy forms */
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Custom styles for messages */
+.alert {
+    margin-bottom: 1rem;
+}
+
+/* Custom styles for tables */
+.table {
+    background-color: white;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+}

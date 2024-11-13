@@ -1,0 +1,54 @@
+<!-- templates/core/home.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center align-items-center min-vh-75">
+        <div class="col-md-8 text-center">
+            <h1 class="display-4 mb-4">Welcome to SafeAlert</h1>
+            <p class="lead mb-4">An AI-Enhanced Emergency Response System designed to keep you and your loved ones safe.</p>
+            
+            {% if user.is_authenticated %}
+                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                    <a href="{% url 'dashboard' %}" class="btn btn-primary btn-lg px-4 gap-3">Go to Dashboard</a>
+                </div>
+            {% else %}
+                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                    <a href="{% url 'register' %}" class="btn btn-primary btn-lg px-4">Get Started</a>
+                    <a href="{% url 'login' %}" class="btn btn-outline-primary btn-lg px-4">Login</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row mt-5 g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Quick Response</h3>
+                    <p class="card-text">Send emergency alerts to your contacts with just one click.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h3 class="card-title">AI-Powered</h3>
+                    <p class="card-text">Smart message generation and situation assessment using advanced AI.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Location Tracking</h3>
+                    <p class="card-text">Automatically share your location with emergency contacts.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
